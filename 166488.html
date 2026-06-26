@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Save Our Wildlife</title>
+
+  <!-- External CSS stylesheet -->
+  <link rel="stylesheet" href="wildlife.css" />
+</head>
+<body>
+
+  <!-- Accessibility: Skip Navigation -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ══ HEADER ══ -->
+  <header role="banner">
+    <!-- MARK 1 & 2: Heading "Save Our Wildlife" -->
+    <h1>Save Our <span>Wildlife</span></h1>
+    <p class="tagline">Every species lost is a story the world can never tell again.</p>
+  </header>
+
+  <!-- ══ MAIN CONTENT ══ -->
+  <main id="main-content" role="main">
+
+    <!-- MARK 3 & 4: Embedded video with controls -->
+    <div class="video-wrapper" id="videoWrapper" aria-label="Wildlife promotional video player">
+
+      <video
+        id="wildlifeVideo"
+        controls
+        preload="metadata"
+        aria-label="Save Our Wildlife — promotional video showing endangered species in their natural habitats"
+      >
+        <source src="wildlife.mp4" type="video/mp4" />
+        <!-- Accessibility: fallback text for unsupported browsers -->
+        <p>
+          Your browser does not support HTML5 video.
+          <a href="wildlife.mp4">Download the video</a> instead.
+        </p>
+      </video>
+
+      <!-- Overlay shown when video is hidden via the toggle button -->
+      <div class="video-hidden-overlay" aria-hidden="true" role="presentation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5
+               c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5
+               c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774
+               M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21
+               m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88"/>
+        </svg>
+        <span>Video is hidden — click Play Video to reveal</span>
+      </div>
+
+    </div>
+
+    <!-- MARK 5, 6 & 7: Toggle Button — hides video or plays if not playing -->
+    <div class="controls">
+      <button
+        class="btn-toggle"
+        id="toggleBtn"
+        type="button"
+        aria-controls="wildlifeVideo"
+        aria-pressed="false"
+        aria-label="Play the wildlife video"
+      >
+        <svg id="btnIcon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+        <span id="btnLabel">Play Video</span>
+      </button>
+    </div>
+
+    <!-- MARK 8 & 9: Description below the video -->
+    <section class="description" aria-labelledby="desc-heading">
+      <h2 id="desc-heading">About This Campaign</h2>
+      <p>
+        Over one million species face extinction due to habitat loss, climate change, and
+        illegal wildlife trade. This video celebrates the extraordinary creatures that share
+        our planet — and calls on each of us to act before their silence becomes permanent.
+        Join our conservation efforts and help protect biodiversity for future generations.
+      </p>
+    </section>
+
+    <!-- Supporting stats for context -->
+    <section class="stats" aria-label="Wildlife conservation statistics">
+      <div class="stat">
+        <span class="stat-number" aria-label="1 million plus">1M+</span>
+        <span class="stat-label">Species Threatened</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">68%</span>
+        <span class="stat-label">Wildlife Decline Since 1970</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">190+</span>
+        <span class="stat-label">Nations in Our Network</span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2026 Save Our Wildlife Conservation Initiative. All rights reserved.</p>
+  </footer>
+
+  <!-- External JavaScript file — loaded at end of body so DOM is ready -->
+  <script src="wildlife.js"></script>
+
+</body>
+</html>
